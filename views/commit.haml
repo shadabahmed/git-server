@@ -1,0 +1,8 @@
+.commit_raw
+  %h2
+    Commit:
+    = commit.sha
+  %pre
+    :markdown
+      tree <sha>[#{commit.gtree.sha}](/tree/#{commit.gtree.sha})</sha>
+      #{commit.contents.split("\n")[1..-1].join("\n")}

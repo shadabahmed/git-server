@@ -1,0 +1,8 @@
+.commit_raw
+  %h2
+    Tree:
+    = tree.sha
+  %pre
+    - tree.contents_array.collect{|x| x.split /\s|\s/}.each do |(perm, type, sha, name)|
+      :markdown
+        #{perm} #{type} <sha>[#{sha}](/#{type}/#{sha})</sha> #{name}

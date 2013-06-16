@@ -1,0 +1,23 @@
+.container
+  .commits
+    %h1 Git Server v0.1
+    %h2
+      Commits
+      %a{:class => 'reset'}
+    %ol.progress-bar
+      - @commits.each_with_index do |commit, idx|
+        %li.commit
+          %a{:href => "/commit/#{commit.sha}"}=commit.sha[0..20]
+          = haml :"commit_detail", :locals => {:commit => commit}
+        - if (idx + 1) < @commits.size
+          %li.separator
+          %li.diff
+            %a
+              %img{:src => '/images/diff.png'}
+            %div.detail
+              Awesome Git Commits are here what they count as
+          %li.separator
+  .objects
+    %h2
+      Repository at
+      =@repo
