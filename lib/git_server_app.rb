@@ -10,7 +10,8 @@ module GitServer
       set :root, File.join(File.dirname(__FILE__), '..')
       set :public_folder, File.join(root, 'public')
       set :views, File.join(root, 'views')
-      enable :sessions
+      set :environment, :production
+      disable :logging, :sessions
     end
   end
 end

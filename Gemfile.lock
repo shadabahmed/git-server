@@ -5,7 +5,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    daemons (1.1.9)
     diffy (2.1.4)
+    eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
     git (1.2.5)
@@ -52,6 +54,10 @@ GEM
       tilt (~> 1.1)
     textutils (0.6.4)
       logutils (~> 0.5)
+    thin (1.5.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     tilt (1.4.1)
 
 PLATFORMS
@@ -67,3 +73,4 @@ DEPENDENCIES
   redcarpet
   sinatra
   sinatra-asset-pipeline
+  thin
