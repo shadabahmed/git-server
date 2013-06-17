@@ -1,6 +1,26 @@
-.commit_raw
+.blob
   %h2
     Blob:
     = blob.sha
-  %pre
-    =blob.contents
+  .detail-container
+    - if !@file_type || @file_type == :text
+      .header
+        %span.text
+          Text File :
+        = params[:name]
+      .content
+        %pre
+          =blob.contents
+    - elsif @file_type == :image
+      .header
+        %span.image
+          Image File:
+        = params[:name]
+      .content
+        %img{:src => data_uri(blob)}
+    - else
+      .header
+        %span.binary
+          Binary File :
+        = params[:name]
+      .content

@@ -1,2 +1,3 @@
-require File.expand_path('../lib/git_server_app', __FILE__)
+$:.unshift File.expand_path("../lib", __FILE__)
+require 'git_server_app'
 run GitServer::App

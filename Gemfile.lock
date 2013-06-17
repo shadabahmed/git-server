@@ -5,6 +5,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    diffy (2.1.4)
     execjs (1.4.0)
       multi_json (~> 1.0)
     git (1.2.5)
@@ -17,8 +18,10 @@ GEM
       kramdown (>= 1.0.2)
       props (>= 1.0.0)
       textutils (>= 0.6.4)
+    mimemagic (0.2.0)
     multi_json (1.7.7)
     props (1.0.0)
+    ptools (1.2.2)
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
@@ -55,9 +58,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  diffy
   git
   haml
   markdown
+  mimemagic
+  ptools
   redcarpet
   sinatra
   sinatra-asset-pipeline

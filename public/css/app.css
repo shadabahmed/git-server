@@ -1,8 +1,10 @@
 @import "fonts.css";
 @import "pre.css";
+@import "details.css";
 
 body{
    background: #4183c4;
+   color: #fff;
    font-family: 'Adelle Bold', 'Helvetica', 'verdana';
    padding: 0;
    margin: 0;
@@ -19,6 +21,7 @@ ol, li{
 .container
 {
     overflow: hidden;
+    color: #333;
 }
 
 .container::after
@@ -92,13 +95,13 @@ ol.progress-bar li{
     padding: 20px 10px;
 }
 
-.progress-bar li.diff{
+.progress-bar li.diff_container{
     margin-bottom: -6px;
     position: relative;
     padding: 0 20px 0 0;
 }
 
-.progress-bar li.diff img{
+.progress-bar li.diff_container img{
    opacity: 0.5;
 }
 
@@ -122,22 +125,27 @@ ol.progress-bar li{
     padding: 5px 10px;
     text-align: left;
     left: 115%;
-    top: -55px;
-    width: 800px;
+    width: 900px;
     min-height: 115px;
 }
 
 .progress-bar li .detail {
-    top: -70px;
     display: none;
+}
 
+.progress-bar li.selected{
+    box-shadow: 0 0 20px #4183c4;
+}
+
+.progress-bar li.diff_container .arrow {
+    top: -16px;
 }
 
 .progress-bar li .detail .orig{
     padding: 5px;
 }
 
-.progress-bar li .detail .ajax.wait {
+.progress-bar li .detail.wait {
     background-image: url('/images/loader.gif');
     background-repeat: no-repeat;
     background-position: center center;
@@ -167,4 +175,10 @@ ol.progress-bar li{
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
+}
+
+.blob img{
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 100px 100px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.8);
 }

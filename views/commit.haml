@@ -2,7 +2,16 @@
   %h2
     Commit:
     = commit.sha
-  %pre
-    :markdown
-      tree <sha>[#{commit.gtree.sha}](/tree/#{commit.gtree.sha})</sha>
-      #{commit.contents.split("\n")[1..-1].join("\n")}
+  .detail-container
+    .header
+      %span.commit
+        Contents :
+    .content
+      %pre
+        :ruby
+          haml_io << "tree <sha><a href=\"/tree/#{commit.gtree.sha}\">#{commit.gtree.sha}</a></sha>\n"
+          commit.parents.each do |parent|
+            haml_io << "parent <sha><a href=\"/commit/#{parent.sha}\">#{parent.sha}</a></sha>\n"
+          end
+          haml_io << commit.contents.split("\n")[(commit.parents.size + 1)..-1].join("\n")
+
